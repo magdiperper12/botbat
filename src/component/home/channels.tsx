@@ -15,10 +15,12 @@ function Channels() {
 			<div className='container mx-auto px-4 lg:px-12'>
 				<div className='text-center mb-3 md:mb-10'>
 					<h1 className='text-xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight'>
-						Reach and Engage Customers on their favorite channels
+						Reach and Engage Customers on their favorite channels conversational
+						AI on their
 					</h1>
 					<p className='text-lg md:text-xl lg:text-2xl mt-3 text-gray-700'>
-						With powerful conversational AI on their channels
+						With powerful conversational AI on their channels Engage Customers
+						on their favorite channels
 					</p>
 				</div>
 
