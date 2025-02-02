@@ -4556,11 +4556,6 @@ type WebPOptions = {
   readonly quality: InputMaybe<Scalars['Int']>;
 };
 
-type carasoulQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type carasoulQueryQuery = { readonly strapi: { readonly home: { readonly data: { readonly id: string | null, readonly attributes: { readonly introHero: { readonly data: { readonly id: string | null, readonly attributes: { readonly description: any | null, readonly subtitle: string | null, readonly title: string | null, readonly actions: ReadonlyArray<{ readonly buttonText: string | null, readonly buttonUrl: string | null, readonly id: string } | null> | null } | null } | null } | null } | null } | null } | null } };
-
 type GatsbyImageSharpFixedFragment = { readonly base64: string | null, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
 
 type GatsbyImageSharpFixed_noBase64Fragment = { readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
@@ -4586,16 +4581,6 @@ type GatsbyImageSharpFluid_withWebp_noBase64Fragment = { readonly aspectRatio: n
 type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = { readonly tracedSVG: string | null, readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly srcWebp: string | null, readonly srcSetWebp: string | null, readonly sizes: string };
 
 type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: number, readonly maxWidth: number };
-
-type MyfeatureQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type MyfeatureQueryQuery = { readonly strapi: { readonly home: { readonly data: { readonly id: string | null, readonly attributes: { readonly journeySection: { readonly data: { readonly id: string | null, readonly attributes: { readonly description: any | null, readonly header: string | null, readonly subTitle: string | null } | null } | null } | null } | null } | null } | null } };
-
-type MyjournyQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type MyjournyQueryQuery = { readonly strapi: { readonly home: { readonly data: { readonly id: string | null, readonly attributes: { readonly journeySection: { readonly data: { readonly id: string | null, readonly attributes: { readonly features: { readonly data: ReadonlyArray<{ readonly id: string | null, readonly attributes: { readonly subtitle: string | null, readonly header: string, readonly dicription: any | null, readonly mediaUrls: string | null } | null }> } | null } | null } | null } | null } | null } | null } | null } };
 
 
 }

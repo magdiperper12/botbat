@@ -1,66 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import React from "react";
 
 // Component
-const Features: React.FC<FeaturesProps> = () => {
-  const [description, setDescription] = useState<string>("");
-  const [subtitle, setSubtitle] = useState<string>("");
-  const [title, setTitle] = useState<string>("");
-
-  const myData = useStaticQuery(graphql`
-    query MyfeatureQuery {
-      strapi {
-        home {
-          data {
-            id
-            attributes {
-              journeySection {
-                data {
-                  id
-                  attributes {
-                    description
-                    header
-                    subTitle
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  useEffect(() => {
-    const journeySectionAttributes =
-      myData.strapi.home.data.attributes.journeySection.data.attributes;
-
-    if (journeySectionAttributes) {
-      setDescription(
-        journeySectionAttributes.description
-          .map((desc: { children: any[] }) =>
-            desc.children.map((child) => child.text).join(" ")
-          )
-          .join(" ")
-      );
-    }
-    setTitle(journeySectionAttributes.header);
-    setSubtitle(journeySectionAttributes.subTitle);
-  }, [myData]);
-
+const Features: React.FC = () => {
   return (
     <div>
       <div className="text-center mt-4 md:my-12">
         <p className="text-lg md:text-xl lg:text-2xl font-extrabold">
           {" "}
-          {subtitle || "Subtitle here"}
+          {"journy"}
         </p>
         <h1 className="text-xl md:text-3xl lg:text-4xl font-extrabold mt-2 md:mt-5 leading-tight">
-          {title || "Title here"}
+          {"workflow builder your commmunicatione with AI-power"}
         </h1>
-        <p className="text-base md:text-lg lg:text-xl mt-5 flex w-3/4 m-auto">
-          {description || "Description here"}
-        </p>
       </div>
     </div>
   );

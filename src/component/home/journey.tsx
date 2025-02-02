@@ -29,51 +29,6 @@ const items = [
 ];
 
 function Journey() {
-  const journyData = useStaticQuery(graphql`
-    query MyjournyQuery {
-      strapi {
-        home {
-          data {
-            id
-            attributes {
-              journeySection {
-                data {
-                  id
-                  attributes {
-                    features {
-                      data {
-                        id
-                        attributes {
-                          subtitle
-                          header
-                          dicription
-                          mediaUrls
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  const journeyAttributes =
-    journyData.strapi.home.data.attributes.journeySection.data.attributes;
-
-  const featuresData = journeyAttributes.features.data.map((feature: any) => {
-    return {
-      id: feature.id,
-      header: feature.attributes.header,
-      subtitle: feature.attributes.subtitle,
-      description: feature.attributes.dicription[0].children[0].text,
-      mediaUrls: feature.attributes.mediaUrls,
-    };
-  });
-
   return (
     <div className="py-11 md:pt-16  md:py-0">
       <div className="container mx-auto  md:px-4 text-center">
@@ -86,7 +41,7 @@ function Journey() {
             >
               <div className="w-full md:w-1/2 px-4 md:px-8 lg:px-10 ">
                 <img
-                  src={featuresData.mediaUrls || item.image}
+                  src={item.image}
                   alt="Automate communication"
                   className="rounded-lg object-cover object-center"
                 />
@@ -96,17 +51,13 @@ function Journey() {
               >
                 <p className="relative px-8 font-bold my-1">
                   <span className="absolute start-0 top-0 h-full w-3 bg-blue-500"></span>
-                  {featuresData.subtitle || "Automate your communication  "}
+                  product title
                 </p>
 
                 <h2 className="text-xl md:text-xl lg:text-2xl font-semibold my-1">
-                  {featuresData.header ||
-                    "Support with our AI chatbot by your side."}
+                  {item.heading}
                 </h2>
-                <p className="text-md md:text-lg  my-1">
-                  {featuresData.description ||
-                    "AI chatbot assists you in handling customer queries efficiently. Enhance customer support with our intelligent chatbot solutions."}
-                </p>
+                <p className="text-md md:text-lg  my-1">{item.text}</p>
               </div>
             </div>
           ))}
